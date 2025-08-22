@@ -38,6 +38,7 @@
 					},
 					"sink": {
 						"type": "SqlServerSink",
+						"writeBatchSize": 10,
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate"
