@@ -77,13 +77,14 @@
 						"referenceName": "DS_SQL_Source_Table",
 						"type": "DatasetReference",
 						"parameters": {
-							"Tablename": "HRP.Employee_Data"
+							"Tablename": "Employee_Data",
+							"schema": "HRP"
 						}
 					}
 				]
 			},
 			{
-				"name": "Copy data1",
+				"name": "Department",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -143,7 +144,8 @@
 						"referenceName": "DS_SQL_Source_Table",
 						"type": "DatasetReference",
 						"parameters": {
-							"Tablename": "HRP.Department"
+							"Tablename": "Department",
+							"schema": "HRP"
 						}
 					}
 				]
