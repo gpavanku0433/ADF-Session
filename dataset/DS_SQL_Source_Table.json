@@ -30,7 +30,7 @@
 		],
 		"typeProperties": {
 			"schema": "HRP",
-			"table": "Employee"
+			"table": "Employee_Data"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
