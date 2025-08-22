@@ -27,11 +27,7 @@
 				"name": "Empdob",
 				"type": "date"
 			}
-		],
-		"typeProperties": {
-			"schema": "HRP",
-			"table": "Employee"
-		}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
