@@ -14,7 +14,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "inputfolder//Employee_Data.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "HRP.Employee_Data"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
@@ -44,6 +53,7 @@
 						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"typeConversion": true,
