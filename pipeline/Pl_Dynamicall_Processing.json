@@ -52,11 +52,9 @@
 						{
 							"name": "ADLS to SQL SERVER",
 							"type": "Copy",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
-									"activity": "Set variable1",
+									"activity": "Archieve filename",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -135,8 +133,6 @@
 						{
 							"name": "Archieving",
 							"type": "Copy",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "ADLS to SQL SERVER",
@@ -212,7 +208,7 @@
 							]
 						},
 						{
-							"name": "Set variable1",
+							"name": "Archieve filename",
 							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {
