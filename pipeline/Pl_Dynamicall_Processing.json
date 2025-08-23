@@ -193,7 +193,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename": {
-											"value": "@concat(substring(variables('Filename'),1,indexof(variables('Filename'),'.')),'_',formatDateTime(utcNow(),'yyyyMMdd'),'.csv')",
+											"value": "@concat(substring(variables('Filename'),0,add(indexof(variables('Filename'),'.'),-1)),'_',formatDateTime(utcNow(),'yyyyMMdd'),'.csv')",
 											"type": "Expression"
 										}
 									}
