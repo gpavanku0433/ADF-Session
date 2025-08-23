@@ -52,7 +52,16 @@
 						{
 							"name": "ADLS to SQL SERVER",
 							"type": "Copy",
-							"dependsOn": [],
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
+							"dependsOn": [
+								{
+									"activity": "Set variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -126,6 +135,8 @@
 						{
 							"name": "Archieving",
 							"type": "Copy",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "ADLS to SQL SERVER",
@@ -199,6 +210,23 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Filename",
+								"value": {
+									"value": "@concat(substring(item().name,0,add(indexof(item().name,'.'),-1)),'_',formatDateTime(utcNow(),'yyyyMMdd'),'.csv')",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
