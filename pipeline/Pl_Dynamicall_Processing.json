@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get File Names').output.childItems.name",
+						"value": "@activity('Get File Names').output.childItems\n\n\n",
 						"type": "Expression"
 					},
 					"activities": [
@@ -65,6 +65,30 @@
 									"type": "Expression"
 								}
 							}
+						},
+						{
+							"name": "Fetch Type information",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Fetch File Names",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "type",
+								"value": {
+									"value": "@item().type",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
@@ -72,6 +96,9 @@
 		],
 		"variables": {
 			"Filename": {
+				"type": "String"
+			},
+			"type": {
 				"type": "String"
 			}
 		},
