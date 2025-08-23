@@ -174,7 +174,7 @@
 							]
 						},
 						{
-							"name": "Copy data1",
+							"name": "Archieving",
 							"type": "Copy",
 							"dependsOn": [
 								{
