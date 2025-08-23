@@ -83,7 +83,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "type",
+								"variableName": "File Type",
 								"value": {
 									"value": "@item().type",
 									"type": "Expression"
@@ -99,6 +99,9 @@
 				"type": "String"
 			},
 			"type": {
+				"type": "String"
+			},
+			"File Type": {
 				"type": "String"
 			}
 		},
