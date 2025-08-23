@@ -204,7 +204,26 @@
 										"type": "DelimitedTextReadSettings"
 									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
@@ -213,6 +232,18 @@
 									"parameters": {
 										"filename": {
 											"value": "@variables('Filename')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_ADLS_Archieve",
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": {
+											"value": "@concat(first(variables('Filename')),'_',formatDateTime(utcNow(),'yyyyMMdd'))",
 											"type": "Expression"
 										}
 									}
