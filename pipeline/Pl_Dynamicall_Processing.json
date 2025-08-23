@@ -116,7 +116,7 @@
 									"type": "DelimitedTextSource",
 									"additionalColumns": [
 										{
-											"name": "Starttime",
+											"name": "StartTime",
 											"value": {
 												"value": "@utcNow()",
 												"type": "Expression"
