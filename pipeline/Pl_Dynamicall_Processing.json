@@ -98,9 +98,6 @@
 			"Filename": {
 				"type": "String"
 			},
-			"type": {
-				"type": "String"
-			},
 			"File Type": {
 				"type": "String"
 			}
