@@ -75,7 +75,7 @@
 										{
 											"name": "filename",
 											"value": {
-												"value": "@variables('Filename')",
+												"value": "@item().name",
 												"type": "Expression"
 											}
 										}
