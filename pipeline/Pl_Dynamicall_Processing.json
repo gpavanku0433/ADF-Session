@@ -141,7 +141,6 @@
 								},
 								"sink": {
 									"type": "SqlServerSink",
-									"preCopyScript": "Truncate Table HRP.Employee_Data",
 									"writeBehavior": "insert",
 									"sqlWriterUseTableLock": false
 								},
