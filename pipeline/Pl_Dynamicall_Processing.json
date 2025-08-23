@@ -69,6 +69,8 @@
 						{
 							"name": "Fetch Type information",
 							"type": "SetVariable",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Fetch File Names",
